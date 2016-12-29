@@ -39,17 +39,26 @@
       mso-line-height-rule: exactly;
     }
 
+    h1,h2,h3,h4,h5,h6 {
+      display:block;
+      margin:0;
+      padding:0;
+    }
+
     table {
       border-spacing: 0;
     }
+
     table, td {
       border-collapse: collapse;
       mso-table-lspace: 0pt;
       mso-table-rspace: 0pt;
     }
+
     img {
       -ms-interpolation-mode: bicubic;
     }
+
     img, a img {
       border: 0;
       outline: none;
@@ -85,57 +94,136 @@
       border-top:0;
     }
 
-    .thread-item.expanded .thread-body .body, .msg-body {
-      width: 100% !important;
-      display: block !important;
+    .textContent img{
+      height:auto !important;
     }
 
-    .ReadMsgBody, .ExternalClass {
-      width: 100%;
+    #templateHeader {
+      background-color:#3b7b30;
+      background-image:none;
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size:cover;
+      border-top:0;
+      border-bottom:0;
+      padding-top:40px;
+      padding-bottom:8px;
     }
 
-    #backgroundTable, #wrapperCell {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      line-height: 100% !important;
-    !important;
+    #templateHeader .textContent, #templateHeader .textContent p {
+      color:#FFFFFF;
+      font-size:15px;
+      line-height:150%;
+      text-align:center;
     }
 
-    .ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalClass div, .ExternalClass span, .ExternalClass font {
-      line-height: 100%;
+    #templateHeader .textContent a, #templateHeader .textContent p a {
+      color:#FFFFFF;
+      font-weight:normal;
+      text-decoration:underline;
     }
+
+    /* Provided styles, not sure if these are needed yet. */
+    /*.thread-item.expanded .thread-body .body, .msg-body {*/
+      /*width: 100% !important;*/
+      /*display: block !important;*/
+    /*}*/
+
+    /*.ReadMsgBody, .ExternalClass {*/
+      /*width: 100%;*/
+    /*}*/
+
+    /*#backgroundTable, #wrapperCell {*/
+      /*height: 100%;*/
+      /*margin: 0;*/
+      /*padding: 0;*/
+      /*line-height: 100% !important;*/
+    /*!important;*/
+    /*}*/
+
+    /*.ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalClass div, .ExternalClass span, .ExternalClass font {*/
+      /*line-height: 100%;*/
+    /*}*/
 
 
     /* PUASD newsletter styling */
-    @media only screen and (min-width:768px){
+    @media only screen and (min-width:768px) {
       .templateContainer{
         width:600px !important;
       }
     }
 
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 480px) {
       body,table,td,p,a,li,blockquote{
         -webkit-text-size-adjust:none !important;
       }
     }
 
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 480px) {
       body{
         width:100% !important;
         min-width:100% !important;
       }
     }
 
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 480px) {
       #bodyCell{
         padding-top:10px !important;
       }
     }
+
+    @media only screen and (max-width: 480px) {
+      .image{
+        width:100% !important;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .cartContainer,.captionTopContent,.recContentContainer,.captionBottomContent,.textContentContainer,.boxedTextContentContainer,.imageGroupContentContainer,.captionLeftTextContentContainer,.captionRightTextContentContainer,.captionLeftImageContentContainer,.captionRightImageContentContainer,.imageCardLeftTextContentContainer,.imageCardRightTextContentContainer {
+        max-width:100% !important;
+        width:100% !important;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .textContent,.boxedTextContentColumn {
+        padding-right:18px !important;
+        padding-left:18px !important;
+      }
+    }
+
+    /* Make the text larger in size for better readability on small screens. */
+    @media only screen and (max-width: 480px) {
+      /* Hide the pre-header text to save space. */
+      #templatePreheader {
+        display:none !important;
+      }
+
+      #templatePreheader .textContent, #templatePreheader .textContent p {
+        font-size:14px !important;
+        line-height:150% !important;
+      }
+
+      #templateHeader .textContent, #templateHeader .textContent p {
+        font-size:16px !important;
+        line-height:150% !important;
+      }
+
+      #templateBody .textContent, #templateBody .textContent p {
+        font-size:16px !important;
+        line-height:150% !important;
+      }
+
+      #templateFooter .textContent, #templateFooter .textContent p {
+        font-size:14px !important;
+        line-height:150% !important;
+      }
+
+    }
   </style>
 </head>
 <body>
-<!-- Have a safe font fallback for outlook to use. -->
+<!-- // Have a safe font fallback for outlook to use. -->
 <!--[if mso]>
   <style type="text/css">
     body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
@@ -156,11 +244,59 @@
 
         <!-- // Email Container table. -->
         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="max-width:600px !important; border:0;">
+          <!-- Header -->
           <tr>
-            <td valign="top" id="templatePreheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+            <td valign="top" id="templateHeader">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td valign="top" style="padding-top:9px;">
+                      <!-- // Ghost wrapper table to max width in pixels in outlook. -->
+                      <!--[if mso]>
+                      <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                        <tr>
+                          <td valign="top" width="600" style="width:600px;">
+                      <![endif]-->
+
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="textContentContainer">
+                        <tbody>
+                          <tr>
+                            <td valign="top" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;" class="textContent">
+                              <a href="https://www.pausd.org/">
+                                <img src="https://clients.trellon.org/pausd/profiles/pausd/modules/features/pd_newsletter/plugins/layouts/pausd_newsletter/images/pausd.svg" alt="PAUSD LOGO" width="300" height="180">
+                              </a>
+                            </td>
+                            <!--<td valign="top" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;" class="textContent">-->
+                              <!--<h4 style="text-align:left; margin:-35px 0px 0px 40px; position:absolute; font-weight: 100;">NOVEMBER 2016</h4>-->
+                            <!--</td>-->
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="textContentContainer">
+                        <tbody>
+                          <tr>
+                            <td valign="top" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px; text-align:left;" class="textContent">
+                              <h4 style="font-weight: 100;">NOVEMBER 2016</h4>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <!-- // End ghost wrapper table. -->
+                      <!--[if mso]>
+                          </td>
+                        </tr>
+                      </table>
+                      <![endif]-->
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </td>
           </tr>
         </table>
+
+
         <!-- // End of email container table for outlook. -->
         <!--[if gte mso 9]>
             </td>
